@@ -8,7 +8,7 @@ It's a free and open source software for Windows XP and later.
 
 <p align=center>
   <a href="https://reactos.org/">
-    <img alt="ReactOS" src="https://reactos.org/sites/default/files/ReactOS_0.png">
+    <img alt="ReactOS" src="img/reactos-225x54.png">
   </a>
 </p>
 
