@@ -26,10 +26,10 @@ It's a free and open source software for Windows XP and later.
 - Copyright 1993-2023 the Wine project authors
 - Copyright ReactOS Development Team
 - Copyright 2004 Krzysztof Foltman
-- Copyright 2007 Alexander N. Sørnes <alex@thehandofagony.com>
-- Copyright 2007-2008 Alexander N. Sørnes <alex@thehandofagony.com>
-- Copyright 2010 Dylan Smith <dylan.ah.smith@gmail.com>
-- Copyright 2020 Katayama Hirofumi MZ <katayama.hirofumi.mz@gmail.com>
+- Copyright 2007 Alexander N. Sørnes (alex@thehandofagony.com)
+- Copyright 2007-2008 Alexander N. Sørnes (alex@thehandofagony.com)
+- Copyright 2010 Dylan Smith (dylan.ah.smith@gmail.com)
+- Copyright 2020 Katayama Hirofumi MZ (katayama.hirofumi.mz@gmail.com)
 - and more!
 
 ## Translators
@@ -43,16 +43,16 @@ It's a free and open source software for Windows XP and later.
 - Copyright 2006 Phil Krylov
 - Copyright 2006,2007 YunSong Hwang
 - Copyright 2006-2009 Jonathan Ernst
-- Copyright 2006-2010 Alexander N. Sørnes <alex@thehandofagony.com>
+- Copyright 2006-2010 Alexander N. Sørnes (alex@thehandofagony.com)
 - Copyright 2008 Frans Kool
-- Copyright 2008 Hongbo Ni <hongbo.at.njstar.com>
-- Copyright 2008 Jens Albretsen <jens@albretsen.dk>
+- Copyright 2008 Hongbo Ni (hongbo.at.njstar.com)
+- Copyright 2008 Jens Albretsen (jens@albretsen.dk)
 - Copyright 2008 Katayama Hirofumi MZ
 - Copyright 2008 Ricardo Filipe
 - Copyright 2008 Rok Mandeljc
 - Copyright 2009 Anders Jonsson
-- Copyright 2009 Aurimas Fišeras <aurimas@gmail.com>
-- Copyright 2010 Cheer Xiao <xiaqqaix.at.gmail.com>
+- Copyright 2009 Aurimas Fišeras (aurimas@gmail.com)
+- Copyright 2010 Cheer Xiao (xiaqqaix.at.gmail.com)
 - Copyright 2010 Claudia Cotună
 - Copyright 2010 Frédéric Delanoy
 - Copyright 2010 Gustavo Henrique Milaré
@@ -63,9 +63,9 @@ It's a free and open source software for Windows XP and later.
 - Copyright 2011 Ștefan Fulea
 - Copyright 2013-2016, 2019 Erdem Ersoy (eersoy93) (erdemersoy [at] erdemersoy [dot] net)
 - Copyright 2014 Ismael Ferreras Morezuelas
-- Copyright 2017 Li Keqing <auroracloud4096.at.gmail.com>
+- Copyright 2017 Li Keqing (auroracloud4096.at.gmail.com)
 - Copyright 2020 Tibor Lajos Füzi
-- Copyright 2020-2021 Chan Chilung <eason066.at.gmail.com>
+- Copyright 2020-2021 Chan Chilung (eason066.at.gmail.com)
 - Copyright Ardit Dani
 - Copyright Michael Stefaniuc
 - and more!
