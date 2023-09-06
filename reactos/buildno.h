@@ -1,0 +1,25 @@
+/* Do not edit - Machine generated */
+#ifndef _INC_REACTOS_BUILDNO
+#define _INC_REACTOS_BUILDNO
+
+#define KERNEL_VERSION_BUILD        20230905
+#define KERNEL_VERSION_BUILD_STR    "20230905-0.4.15-dev-6584-g2508cdf"
+#define KERNEL_VERSION_BUILD_RC     "20230905-0.4.15-dev-6584-g2508cdf\0"
+
+#define KERNEL_VERSION_RC           "0.4.15-x86-dev\0"
+#define KERNEL_VERSION_STR          "0.4.15-x86-dev"
+
+#define KERNEL_VERSION_REVISION_RC  "0.4.15-dev-6584-g2508cdf\0"
+#define KERNEL_VERSION_REVISION_STR "0.4.15-dev-6584-g2508cdf"
+
+#define KERNEL_VERSION_COMMIT_HASH  "2508cdfe2e4e99ef76a060dff58d8a136112890d"
+
+#define REACTOS_DLL_VERSION_MAJOR   42
+#define REACTOS_DLL_VERSION_RC      "42.4.15-dev\0"
+#define REACTOS_DLL_VERSION_STR     "42.4.15-dev"
+
+#define REACTOS_COMPILER_NAME       "GNU"
+#define REACTOS_COMPILER_VERSION    "8.4.0"
+
+#endif
+/* EOF */
