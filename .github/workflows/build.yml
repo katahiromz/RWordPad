@@ -1,0 +1,27 @@
+name: Build
+on: [push, pull_request]
+
+jobs:
+  build-msvc:
+    strategy:
+      matrix:
+        os: [windows-latest]
+        toolset: ['14.2', '14.1'] # VS 2019 and 2017 (see below)
+        config: [Debug, Release]
+      fail-fast: false
+    runs-on: ${{matrix.os}}
+    steps:
+    - name: Install ninja
+      run: choco install -y ninja
+    - name: Activate VS cmd
+      uses: ilammy/msvc-dev-cmd@v1
+      with:
+        toolset: ${{matrix.toolset}}
+    - name: Source checkout
+      uses: actions/checkout@v3
+      with:
+        path: src
+    - name: Configure
+      run: cmake -S src -B build -G Ninja -DCMAKE_BUILD_TYPE=${{matrix.config}}
+    - name: Build
+      run: cmake --build build -- -k0
