@@ -6,25 +6,26 @@ cmake_minimum_required(VERSION 3.5)
 # project name and languages
 project(RWordPad C RC)
 
+##############################################################################
+# Debugging
+
 if (DBG)
     add_definitions(-D_DEBUG=1)
 endif()
 
+##############################################################################
+# Architecture
+
 if (MSVC)
-    if (CMAKE_SYSTEM_PROCESSOR MATCHES "(x86)|(X86)")
-        add_definitions(-D_X86_)
-    elseif (CMAKE_SYSTEM_PROCESSOR MATCHES "(amd64)|(AMD64)")
-        add_definitions(-D_AMD64_)
+    if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+        add_definitions(-D_AMD64_ -D_M_AMD64)
     else()
-        message(FATAL_ERROR "Unsupportet platform")
+        add_definitions(-D_X86_ -D_M_IX86)
     endif()
 endif()
 
-if (MSVC)
-    set(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS} /MANIFEST:NO")
-    set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} /MANIFEST:NO")
-    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} /MANIFEST:NO")
-endif()
+##############################################################################
+# wordpad.exe
 
 add_executable(wordpad WIN32
     olecallback.c
@@ -82,6 +83,11 @@ target_compile_definitions(wordpad PRIVATE
 
 target_include_directories(wordpad PRIVATE ./ reactos/)
 target_link_libraries(wordpad PRIVATE comdlg32 ole32 shell32 user32 gdi32 advapi32 comctl32 msvcrt kernel32)
+
 if (MSVC)
+    # Use wWinMain
     target_link_options(wordpad PRIVATE "/entry:wWinMainCRTStartup")
+
+    # No default manifest
+    target_link_options(wordpad PRIVATE /MANIFEST:NO)
 endif()
