@@ -3,7 +3,11 @@
 #include <strsafe.h>
 #include <wine/debug.h>
 
-/* printf with temp buffer allocation */
+int wine_dbg_printf( const char *format, ... )
+{
+    return 0;
+}
+
 const char *wine_dbg_sprintf( const char *format, ... )
 {
     return "";

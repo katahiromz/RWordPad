@@ -32,7 +32,8 @@ add_executable(wordpad WIN32
     registry.c
     wordpad.c
     rsrc.rc
-    compat/debug.c)
+    compat/debug.c
+    compat/wWinMain.c)
 
 target_compile_definitions(wordpad PRIVATE
     UNICODE _UNICODE _CRT_SECURE_NO_WARNINGS STRSAFE_NO_DEPRECATE __REACTOS__
@@ -83,9 +84,4 @@ target_include_directories(wordpad PRIVATE ./ reactos/)
 target_link_libraries(wordpad PRIVATE comdlg32 ole32 shell32 user32 gdi32 advapi32 comctl32 msvcrt kernel32)
 if (MSVC)
     target_link_options(wordpad PRIVATE "/entry:wWinMainCRTStartup")
-endif()
-
-if(MSVC)
-    # Disable warning C4477 (printf format warnings)
-    remove_target_compile_option(wordpad "/we4477")
 endif()
