@@ -2,7 +2,7 @@
 
 This is `"Independent ReactOS WordPad"` from [ReactOS](https://reactos.org/).
 
-![(The screenshot)](img/screenshot.gif)
+![(The screenshot)](img/screenshot.png)
 
 It's a free and open source software for Windows XP and later.
 
