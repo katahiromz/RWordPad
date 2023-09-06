@@ -1,6 +1,6 @@
 # ![](img/wordpad-32x32.png) Independent ReactOS WordPad
 
-This is `"Independent ReactOS WordPad"` from [ReactOS](https://reactos.org/).
+This is `"Independent ReactOS WordPad"` from [WineHQ](https://www.winehq.org/) and [ReactOS](https://reactos.org/).
 
 ![(The screenshot)](img/screenshot.png)
 
