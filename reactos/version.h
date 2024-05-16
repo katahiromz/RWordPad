@@ -20,7 +20,7 @@
 #define KERNEL_VERSION_MINOR        4
 #define KERNEL_VERSION_PATCH_LEVEL  15
 
-#define COPYRIGHT_YEAR "2023"
+#define COPYRIGHT_YEAR "2024"
 
 #endif
 

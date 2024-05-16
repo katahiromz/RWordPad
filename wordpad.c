@@ -34,9 +34,6 @@
 #include <shellapi.h>
 #include <shlobj.h>
 #include <wine/unicode.h>
-#ifdef __REACTOS__
-#include <strsafe.h>
-#endif
 
 #include "wordpad.h"
 
@@ -846,8 +843,15 @@ static BOOL DoSaveFile(LPCWSTR wszSaveFileName, WPARAM format)
     EDITSTREAM stream;
     LRESULT ret;
 
+#ifdef __REACTOS__
+    /* Use OPEN_ALWAYS instead of CREATE_ALWAYS in order to succeed
+     * even if the file has HIDDEN or SYSTEM attributes */
+    hFile = CreateFileW(wszSaveFileName, GENERIC_WRITE, FILE_SHARE_READ, NULL, OPEN_ALWAYS,
+        FILE_ATTRIBUTE_NORMAL, NULL);
+#else
     hFile = CreateFileW(wszSaveFileName, GENERIC_WRITE, 0, NULL, CREATE_ALWAYS,
         FILE_ATTRIBUTE_NORMAL, NULL);
+#endif
 
     if(hFile == INVALID_HANDLE_VALUE)
     {
@@ -873,6 +877,10 @@ static BOOL DoSaveFile(LPCWSTR wszSaveFileName, WPARAM format)
 
     ret = SendMessageW(hEditorWnd, EM_STREAMOUT, format, (LPARAM)&stream);
 
+#ifdef __REACTOS__
+    /* Truncate the file and close it */
+    SetEndOfFile(hFile);
+#endif
     CloseHandle(hFile);
 
     SetFocus(hEditorWnd);
@@ -1386,8 +1394,8 @@ static void number_with_units(LPWSTR buffer, int number)
     static const WCHAR fmt[] = {'%','.','2','f',' ','%','s','\0'};
     float converted = (float)number / (float)TWIPS_PER_INCH *(float)CENTMM_PER_INCH / 1000.0;
 
-#ifdef __REACTOS__
-    StringCchPrintfW(buffer, MAX_STRING_LEN, fmt, converted, units_cmW);
+#ifdef __RWORDPAD__
+    _swprintf(buffer, fmt, converted, units_cmW);
 #else
     sprintfW(buffer, fmt, converted, units_cmW);
 #endif
